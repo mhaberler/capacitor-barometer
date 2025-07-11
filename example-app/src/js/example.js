@@ -1,4 +1,4 @@
-import { Barometer } from 'capacitor-barometer';
+import { Barometer } from '@mhaberler/capacitor-barometer';
 
 window.testEcho = () => {
     const inputValue = document.getElementById("echoInput").value;

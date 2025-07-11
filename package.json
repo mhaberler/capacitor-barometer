@@ -21,10 +21,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmanuelorobinson/capacitor-barometer.git"
+    "url": "https://github.com/mhaberler/capacitor-barometer.git#timestamp"
   },
   "bugs": {
-    "url": "https://github.com/emmanuelorobinson/capacitor-barometer.git/issues"
+    "url": "https://github.com/mhaberler/capacitor-barometer.git/issues"
   },
   "keywords": [
     "capacitor",
