@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorBarometer",
+    name: "MhaberlerCapacitorBarometer",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "CapacitorBarometer",
+            name: "MhaberlerCapacitorBarometer",
             targets: ["BarometerPluginTarget"])
     ],
     dependencies: [

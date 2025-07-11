@@ -4,7 +4,7 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorBarometer',
+      name: 'MhaberlerCapacitorBarometer',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },
