@@ -13,14 +13,20 @@ npx cap sync
 
 <docgen-index>
 
-* [`isAvailable()`](#isavailable)
-* [`start(...)`](#start)
-* [`stop()`](#stop)
-* [`getPressure()`](#getpressure)
-* [`echo(...)`](#echo)
-* [`addListener('onPressureChange', ...)`](#addlisteneronpressurechange-)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+- [@mhaberler/capacitor-barometer](#mhaberlercapacitor-barometer)
+  - [Install](#install)
+  - [API](#api)
+    - [isAvailable()](#isavailable)
+    - [start(...)](#start)
+    - [stop()](#stop)
+    - [getPressure()](#getpressure)
+    - [echo(...)](#echo)
+    - [addListener('onPressureChange', ...)](#addlisteneronpressurechange-)
+    - [removeAllListeners()](#removealllisteners)
+    - [Interfaces](#interfaces)
+      - [PluginListenerHandle](#pluginlistenerhandle)
+  - [v2.0.0 Changes](#v200-changes)
+    - [Optional `interval` parameter for `start()`](#optional-interval-parameter-for-start)
 
 </docgen-index>
 
@@ -137,3 +143,18 @@ Removes all listeners for this plugin.
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>
+
+## v2.0.0 Changes
+
+### Optional `interval` parameter for `start()`
+
+The `start()` method now accepts an optional `interval` parameter (Android only):
+
+```typescript
+await Barometer.start({ interval: 1000 }); // Interval in milliseconds
+```
+
+- **Android:** The `interval` sets the sensor update rate (in ms).
+- **iOS:** The parameter is ignored; iOS uses the default update rate.
+
+If omitted, the default interval
