@@ -10,7 +10,7 @@ export interface Barometer {
    * Starts listening for barometer updates.
    * This will also trigger the 'onPressureChange' event.
    */
-  start(): Promise<void>;
+start(options?: { interval?: number }): Promise<void>;
 
   /**
    * Stops listening for barometer updates.

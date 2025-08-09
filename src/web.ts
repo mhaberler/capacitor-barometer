@@ -13,8 +13,8 @@ export class BarometerWeb extends WebPlugin implements BarometerInterface {
     return { available: false }; // Typically not available on web
   }
 
-  async start(): Promise<void> {
-    console.log('Barometer: start called on web - not implemented');
+  async start(options?: { interval?: number }): Promise<void> {
+    console.log('Barometer: start called on web - not implemented', options);
     // No-op on web, or throw an error if preferred
     return Promise.resolve();
   }

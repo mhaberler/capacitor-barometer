@@ -32,12 +32,17 @@ public class Barometer implements SensorEventListener {
         }
     }
 
-    public void startListening() {
+        public void startListening(Integer interval) {
         if (barometerSensor != null && !isListening) {
-            boolean registered = sensorManager.registerListener(this, barometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            int delay = SensorManager.SENSOR_DELAY_NORMAL;
+            if (interval != null && interval > 0) {
+                // Convert ms to microseconds for registerListener
+                delay = interval * 1000;
+            }
+            boolean registered = sensorManager.registerListener(this, barometerSensor, delay);
             if(registered) {
                 isListening = true;
-                Log.d("BarometerLogic", "Started listening to barometer sensor.");
+                Log.d("BarometerLogic", "Started listening to barometer sensor with interval: " + (interval != null ? interval : "default"));
             } else {
                 Log.e("BarometerLogic", "Failed to register listener for barometer sensor.");
             }

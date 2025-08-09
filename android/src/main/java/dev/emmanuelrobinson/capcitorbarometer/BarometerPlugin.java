@@ -24,7 +24,11 @@ public class BarometerPlugin extends Plugin {
     @PluginMethod
     public void start(PluginCall call) {
         if (implementation.isSensorAvailable()) {
-            implementation.startListening();
+            Integer interval = null;
+            if (call.hasOption("interval")) {
+                interval = call.getInt("interval");
+            }
+            implementation.startListening(interval);
             call.resolve();
         } else {
             call.reject("Barometer sensor not available.");

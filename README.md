@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`isAvailable()`](#isavailable)
-* [`start()`](#start)
+* [`start(...)`](#start)
 * [`stop()`](#stop)
 * [`getPressure()`](#getpressure)
 * [`echo(...)`](#echo)
@@ -40,14 +40,18 @@ Checks if the barometer sensor is available on the device.
 --------------------
 
 
-### start()
+### start(...)
 
 ```typescript
-start() => Promise<void>
+start(options?: { interval?: number | undefined; } | undefined) => Promise<void>
 ```
 
 Starts listening for barometer updates.
 This will also trigger the 'onPressureChange' event.
+
+| Param         | Type                                |
+| ------------- | ----------------------------------- |
+| **`options`** | <code>{ interval?: number; }</code> |
 
 --------------------
 
