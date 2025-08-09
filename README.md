@@ -157,4 +157,5 @@ await Barometer.start({ interval: 1000 }); // Interval in milliseconds
 - **Android:** The `interval` sets the sensor update rate (in ms).
 - **iOS:** The parameter is ignored; iOS uses the default update rate.
 
-If omitted, the default interval
+If omitted, the default interval is used.
+
